@@ -119,7 +119,7 @@ ul.posts span {
 .post h1, 
 .post h2,
 .post h3 {
-  /*border-bottom: 1px solid #eee;*/
+  font-weight: bold;
   line-height: 1.15em;
   color: #000;
   margin: 1.5em 0 .75em;
@@ -127,6 +127,7 @@ ul.posts span {
 
 .post h1 {
   font-size: 30px;
+  border-bottom: 1px solid #eee;
 }
 
 .post h2 {

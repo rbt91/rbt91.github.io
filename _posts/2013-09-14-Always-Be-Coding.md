@@ -15,21 +15,23 @@ You'd be able to implement common data structures. Easily.
 
 Solve lots of problems. [TopCoder](http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index) is an excellent resource. Be ready to solve any kind of problem under the sun. **Repetition doesn't spoil the prayer**.  
 
+# Things that interest me
+
 ### Javascript frameworks
-* Node.js
-* Coffeescript
-* Rendr
-* Backbone
-* Underscore
+Node.js  
+Coffeescript  
+Rendr  
+Backbone  
+Underscore  
   
 ### Languages
-* Haskell
-* Erlang
-* Meta programming
+Haskell  
+Erlang  
+Meta programming  
 
 ### Web frameworks
-* Sinatra
-* Ruby on Rails
+Sinatra  
+Ruby on Rails  
 
 # Resources
 

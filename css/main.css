@@ -39,6 +39,13 @@ hr {
   border-bottom-width: 0px;
 }
 
+blockquote p {
+  font-size: 24px;
+  font-style: italic;
+  color: #333332;
+  line-height: 1.2em;
+  margin: 20px 0;
+}
 /*****************************************************************************/
 /*
 /* Home

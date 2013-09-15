@@ -5,6 +5,8 @@ date:   2013-05-25 14:33:39
 tags:   coding javascript node.js
 ---
 
+> Quintessential blog application using Node.js and Express  
+
 ## JavaScript on Server
 
 Node.js takes JavaScript from browser to the server. Node platform is built on Chrome’s V8 engine which makes it pretty fast.It uses an event-driven, non-blocking IO model which is disruptively different from regular web development paradigm.

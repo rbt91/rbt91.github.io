@@ -2,10 +2,25 @@
 layout: post
 title:  "Always Be Coding"
 date:   2013-09-14 21:00:00
-categories: coding
+tags: 	coding
 ---
 
-It helps build the [constant forward momentum](https://medium.com/tech-talk/d5f8051afce2) essential for success.
+**[Always be coding][AlwaysBeCoding].** The more you code, the better you get. It helps you prepare for the day you're sitting in front of the interviewer. You build the constant forward momentum essential for success. Have specific goals in mind. Your time is constant, better spend it effectively.  
+
+Develop a portfolio of projects. Does not matter if all of them are finished.  
+
+Master at least one programming language. Develop a perspective. Write lots of code, read a lot more, learn the best practices!  
+
+You'd be able to implement common data structures. Easily.  
+
+Solve lots of problems. [TopCoder](http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index) is an excellent resource. Be ready to solve any kind of problem under the sun. **Repetition doesn't spoil the prayer**.  
+
+### Javascript frameworks
+* Node.js
+* Coffeescript
+* Rendr
+* Backbone
+* Underscore
   
 ### Languages
 * Haskell
@@ -15,13 +30,6 @@ It helps build the [constant forward momentum](https://medium.com/tech-talk/d5f8
 ### Web frameworks
 * Sinatra
 * Ruby on Rails
-
-### Javascript frameworks
-* Node.js
-* Coffeescript
-* Rendr
-* Backbone
-* Underscore
 
 # Resources
 
@@ -70,3 +78,5 @@ It helps build the [constant forward momentum](https://medium.com/tech-talk/d5f8
 
 [Bret Victor - Inventing on Principle](http://vimeo.com/36579366)  
 [Airbnb Techtalks](https://www.airbnb.com/techtalks)  
+
+[AlwaysBeCoding]: https://medium.com/tech-talk/d5f8051afce2

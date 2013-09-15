@@ -5,7 +5,7 @@ date:   2013-09-14 21:00:00
 tags: 	coding
 ---
 
-**[Always be coding][AlwaysBeCoding].** The more you code, the better you get. It helps you prepare for the day you're sitting in front of the interviewer. You build the constant forward momentum essential for success. Have specific goals in mind. Your time is constant, better spend it effectively.  
+[Always be coding][AlwaysBeCoding]. The more you code, the better you get. It helps you prepare for the day you're sitting in front of the interviewer. You build the **constant forward momentum** essential for success. Have specific goals in mind. Your time is constant, better spend it effectively.  
 
 Develop a portfolio of projects. Does not matter if all of them are finished.  
 

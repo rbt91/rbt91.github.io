@@ -9,4 +9,4 @@ It's a tough question and difficult to answer clearly. But a tough question does
   
   
   
-  How about writing FR UI using knoeckout/angular to begin with?
+> How about writing FR UI using knoeckout/angular to begin with?

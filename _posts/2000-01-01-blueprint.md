@@ -9,7 +9,13 @@ It's a tough question and difficult to answer clearly. But a tough question does
 
 >Are you moving in the direction of whatever hazy goals you have in mind?
 
-Let's turn it upside down. Instead of setting a goal 2 years in future and figuring out strategies to meet that goal, it'll be much better to always keep picking next thing to learn. Pick, learn, iterate! Build a constant forward momentum, learning new stuff, trying out new things, building something. Build many things. **Always be coding!**
+Let's turn it upside down. Instead of setting a goal 2 years in future and figuring out strategies to meet that goal, it'll be much better to always keep picking next thing to learn. Pick, learn, iterate! Build a constant forward momentum, learning new stuff, trying out new things, building something. Building many things. Develop a portfolio of projects. Does not matter if all of them are finished. Master at least one programming language. Develop a perspective.
+
+Write lots of code, read a lot more, learn the best practices! You'd be able to implement common data structures. Easily. Solve lots of problems. [TopCoder](http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index) is an excellent resource. Be ready to solve any kind of problem under the sun. **Repetition doesn't spoil the prayer**.  
+
+[Always be coding][AlwaysBeCoding]. The more you code, the better you'll get. It helps you prepare for the day you're sitting in front of the interviewer. You build the **constant forward momentum** essential for success. Have specific goals in mind. Your time is constant, better spend it effectively.  
+
+[AlwaysBeCoding]: https://medium.com/tech-talk/d5f8051afce2
 
 At this moment, i see 3 options to choose from:  
 1. learn you a haskell  

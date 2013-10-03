@@ -5,25 +5,16 @@ date:   2000-01-01 01:00:00
 tags:   coding
 ---
 
-## Always be Coding
-
-## Do i know what i want to do?
-
 It's a tough question and difficult to answer clearly. But a tough question does not mean you'd not be asking it. The slightly easier version of this question is:
 
 >Are you moving in the direction of whatever hazy goals you have in mind?
 
-### What is it that i'm after
+Let's turn it upside down. Instead of setting a goal 2 years in future and figuring out strategies to meet that goal, it'll be much better to always keep picking next thing to learn. Pick, learn, iterate! Build a constant forward momentum, learning new stuff, trying out new things, building something. Build many things. **Always be coding!**
 
-Join google or facebook, working on a project that's interesting, engaging, fun!
-
-### Timeline
-
-I've been here for 3.5 years. It's time to start working on some stretch goals and achieve something bigger/better. Probably a better idea is to list out the small milestones, and approximate time in which i'd be able to achieve them. Acurate and efficient list should give me a good idea of the time it'll take me to reach my goal.
-
-### One big goal, many small milestones
-
-You can't just work towards an idea that's 2 years into the future. You need small goals that can help you track and adjust progress. Divide that big goal into small monthly/quarterly milestones so that achieving those milestones one by one translates into achieving the big goal when the time is up!  
+At this moment, i see 3 options to choose from:  
+1. learn you a haskell  
+2. practice writing algorithms and solving topcoder problems  
+3. write small JavaScript apps using Node, nginx, Rendr etc.  
 
 ### Web
 
@@ -70,7 +61,8 @@ TopCoder
 
 ### JavaScript
 
-[Async JavaScript](https://leanpub.com/asyncjs)
+[Async JavaScript](https://leanpub.com/asyncjs)  
+[JavaScript Allonge](https://leanpub.com/javascript-allonge/read)  
 
 ### CoffeeScript
 

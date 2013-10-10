@@ -1,0 +1,16 @@
+{
+	'title' : 'read a book',
+	'items' :
+	{
+		[0] :
+		{
+			'name' : 'Learn you a Haskell',
+			'link' : 'http://learnyouahaskell.com'
+		},
+		[1] :
+		{
+			'name' : 'Javascript Allonge',
+			'link' : 'http://leanpub.com'
+		},
+	},
+}

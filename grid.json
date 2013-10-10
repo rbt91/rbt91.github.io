@@ -1,0 +1,11 @@
+{
+  {
+    'title' : 'read a book',
+    'items' : 
+    {
+      'name' : 'Learn you a Haskell',
+      'link' : 'http://learnyouahaskell.com'
+    }
+  }
+}
+    

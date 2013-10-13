@@ -42,7 +42,7 @@ Ruby meta programming
 **Algorithms**  
 TopCoder  
 
-# Resources
+## Resources
 
 ### Ruby
 
@@ -86,7 +86,7 @@ TopCoder
 [How Browsers Work: Behind the scenes of modern web browsers](http://www.html5rocks.com/en/tutorials/internals/howbrowserswork)  
 
 
-# Tech Talks
+## Tech Talks
 
 [Bret Victor - Inventing on Principle](http://vimeo.com/36579366)  
 [Airbnb Techtalks](https://www.airbnb.com/techtalks)  

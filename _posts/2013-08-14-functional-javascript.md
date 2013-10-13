@@ -5,24 +5,24 @@ date:   2013-09-14 19:33:39
 tags: javascript coding functional
 ---
 
-# Trampolines
+## Trampolines
 
-## Thunk
+### Thunk
 
 [Thunk](https://en.wikipedia.org/wiki/Thunk_\(functional_programming\)) is a parameterless closure for lazy evaluation of expressions.
 
-## Continuation-passing Style
+### Continuation-passing Style
 
-## Tail Call Elimination
+### Tail Call Elimination
 
-## Trampolining
+### Trampolining
 
 [Trampolines in JavaScript](http://raganwald.com/2013/03/28/trampolines-in-javascript.html)
 
 
-### Resources
+## Resources
 
-https://leanpub.com/javascript-allonge  
+[Javascript Allonge](https://leanpub.com/javascript-allonge/read)  
 https://github.com/raganwald/allong.es  
 https://github.com/raganwald/method-combinators  
 http://raganwald.com/2013/04/19/another-look-at-sequence.html  

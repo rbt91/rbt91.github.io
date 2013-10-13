@@ -5,7 +5,7 @@ date:   2013-05-01 21:00:00
 categories: coding
 ---
 
-# Insertion Sort
+## Insertion Sort
 
 Assuming A[0..i] is sorted, insert A[i+1] into its appropriate place in the sorted subarray.
 
@@ -57,7 +57,7 @@ In-place => requires constant amount of additional memory space
 
 [wikipedia page](https://en.wikipedia.org/wiki/Insertion_sort)
 
-# Selection Sort
+## Selection Sort
 
 Insertion sort: A[0..i] now contains *first* i elements in sorted order. **Insert** A[i+1] in its appropriate place in this subarray.
 
@@ -93,7 +93,7 @@ Selection sort can be implemented as stable sort, if instead of swapping the ele
   
 [on wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
 
-# Bubble Sort
+## Bubble Sort
 
 Make n passes over the list. In each pass, compare adjacent elements and swap their positions if they are not in the right order.
 
@@ -123,7 +123,7 @@ Stable
 
 [wikipedia page](https://en.wikipedia.org/wiki/Bubble_sort)
 
-# Heaps
+## Heaps
 
 Heap data structure is a nearly complete binary tree where every node is smaller than its parent node. Hence, root contains the largest value.  
 
@@ -234,7 +234,7 @@ heapsort(a)
 First heapify is O(n). Each siftdown is O(lg n).  
 O(heapsort) = O(n) + (n-1)*O(lg n) = O(n.lg n)  
 
-# Priority Queues
+## Priority Queues
 
 Normal sorted array/list supports removing min/max in O(1) but insertion is costly O(n).  
 For unsorted array/list, it's reverse; insertion is O(1) but removal is O(n).  
@@ -264,7 +264,7 @@ remove()
 }
 ```
   
-# Maximum subsequence
+## Maximum subsequence
 
 Given an array, find a subarray sum of whose values is greatest.
 

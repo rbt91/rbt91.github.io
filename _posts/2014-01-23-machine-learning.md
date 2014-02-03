@@ -22,6 +22,7 @@ Discrete Valued Output, for example, classify if a tumor is malignant or benign,
 A dataset is given but we dont know what are the "right answers" - there are no labels on data.
 
 ### Clustering algorithm
-The way Google News groups different news items into one cohesive story.
+Find  structure in otherwise unstructured data. The way Google News groups different news items into one cohesive story. Other examples include organizing computer networks, social networks, market segmentation etc.
 
-
+### Cocktail party algorithm
+Given an audio recording with multiple audio sources, filter out the individual audio sources.

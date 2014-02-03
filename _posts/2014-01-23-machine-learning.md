@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Draft] Machine Learning"
+title:  "Machine Learning 101"
 date:   2014-01-23 23:57:00
 tags:   machine_learning
 ---

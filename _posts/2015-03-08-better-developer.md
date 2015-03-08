@@ -6,3 +6,7 @@ categories:
 ---
 
 New theme: How to become a better developer!
+
+http://www.objectmentor.com/resources/publishedArticles.html
+Design Patterns
+Code smells

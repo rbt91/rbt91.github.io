@@ -7,6 +7,9 @@ categories:
 
 New theme: How to become a better developer!
 
-http://www.objectmentor.com/resources/publishedArticles.html  
+[Object Mentor articles] [1]    
 Design Patterns  
 Code smells  
+
+
+[1]:http://www.objectmentor.com/resources/publishedArticles.html

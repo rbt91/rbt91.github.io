@@ -10,6 +10,9 @@ New theme: How to become a better developer!
 [Object Mentor articles] [1]    
 Design Patterns  
 Code smells  
+Pragmatic Programmer
+Code Complete (?)
+
 
 
 [1]:http://www.objectmentor.com/resources/publishedArticles.html

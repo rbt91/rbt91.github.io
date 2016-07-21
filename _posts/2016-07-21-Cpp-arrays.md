@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "C++ arrays"
-date:   2016-07-21 12:37:00
+date:   2016-07-20 12:37:00
 tags:   coding
 ---
 

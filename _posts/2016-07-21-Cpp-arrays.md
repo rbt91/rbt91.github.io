@@ -245,3 +245,5 @@ In this case, the array size is significant. Since writing a function that only 
 
 Note that you can only call such a function template with an actual array of integers, not with a pointer to an integer. The size of the array is automatically inferred, and for every size `n`, a different function is instantiated from the template.
 
+## Further reading:  
+http://stackoverflow.com/questions/4810664/how-do-i-use-arrays-in-c

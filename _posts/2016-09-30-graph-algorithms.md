@@ -105,7 +105,7 @@ int main()
 
 # DFS
 
-Note the use of recursion to create depth-first tree representation.  
+DFS is used as preliminary step in many graph algorithms to first understand the structure of graph. Note the use of recursion to create depth-first tree representation.  
 
 ```C++
 #include <iostream>
@@ -219,3 +219,37 @@ int main()
 }
 ```
 
+# Connected components
+
+A graph is **strongly connected** if every vertex is reachable from every other vertex.  
+
+**Strongly connected components** of an arbitrary graph are the collection of sub-graphs where each sub-graph is strongly connected.  
+
+```
+|-> 2 -> 1 -> 0 -> 3 <- 4  
+|-------------|  
+```
+
+Above graph has three SCC. (0, 1, 2), (3), (4). Vertices 3 & 4 are two separate SCC because 3 can be reached from 4, but not vice-versa. 
+
+Several algorithms compute SCC in linear time. The simplest one - [Kosaraju's algorithm](https://en.wikipedia.org/wiki/Strongly_connected_component#Algorithms) - uses two passes of DFS. [Other algorithms](https://en.wikipedia.org/wiki/Strongly_connected_component#Algorithms) require only one pass by making use of one or more stacks. 
+
+Recall that DFS is used as preliminary step in many graph algorithms to first understand the structure of graph.  
+1. call DFS on G  
+2. compute G' by inverting all the edges  
+3. call DFS on G' by choosing vertices in decreasing order of their finishing time computed in step 1
+
+Step 1: If we call DFS on above graph, starting with 2 and then 4, we'll get two depth-first trees: 2-1-0-3 and 4.  
+Step 2: Create G'  
+```
+|--2 <- 1 <- 0 <- 3 -> 4  
+|------------^  
+```
+Step 3: call DFS on G', starting with vertex 4, then 2 followed by 1 and 0 and 3.
+4: (4)  
+2: (2, 0, 1)  
+1: ()  
+0: ()  
+3: (3) ) is already visited  
+
+# ??

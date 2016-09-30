@@ -234,6 +234,9 @@ Above graph has three SCC. (0, 1, 2), (3), (4). Vertices 3 & 4 are two separate 
 
 Several algorithms compute SCC in linear time. The simplest one - [Kosaraju's algorithm](https://en.wikipedia.org/wiki/Strongly_connected_component#Algorithms) - uses two passes of DFS. [Other algorithms](https://en.wikipedia.org/wiki/Strongly_connected_component#Algorithms) require only one pass by making use of one or more stacks. 
 
+## Kosaraju's algorithm for finding SCC
+
+It makes use of the fact that the transpose graph (the same graph with the direction of every edge reversed) has exactly the same strongly connected components as the original graph.  
 Recall that DFS is used as preliminary step in many graph algorithms to first understand the structure of graph.  
 1. call DFS on G  
 2. compute G' by inverting all the edges  

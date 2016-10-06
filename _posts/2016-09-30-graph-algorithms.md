@@ -244,10 +244,12 @@ Recall that DFS is used as preliminary step in many graph algorithms to first un
 
 Step 1: If we call DFS on above graph, starting with 2 and then 4, we'll get two depth-first trees: 2-1-0-3 and 4.  
 Step 2: Create G'  
+
 ```
 |--2 <- 1 <- 0 <- 3 -> 4  
 |------------^  
 ```
+
 Step 3: call DFS on G', starting with vertex 4, then 2 followed by 1 and 0 and 3.
 4: (4)  
 2: (2, 0, 1)  

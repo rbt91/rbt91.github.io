@@ -303,3 +303,10 @@ MST-PRIM(G, r /*starting vertex*/)
 ```
 
 When the algorithm terminates, Q is empty and MST can be build by following the `parent` edges.  
+
+Running time O(E lg V)  
+If we build the min-priority queue using Fibonacci Heap instead of more common Binary Heap, running time improves to O(E + V lg V).  
+
+**Fibonacci Heaps** have better _amortized_ running times for Insert, Decrease-key, and Union operations as compared to plain Binary Heaps. Though only of theoretical interest due to programming complexity.  
+
+

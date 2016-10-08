@@ -29,10 +29,10 @@ By default, we set the color of new node as red. Choosing black node would viola
 
 By choosing a red node, we ensure that properties 1, 2 and 5 continue to be preserved. Only 3 or 4 can be violated.
 
-Algorithm to fixup red-black properties maintains 3-part invariant:
-1. Node z is red
-2. Root is black
-3. If the tree violates property 3, it is because z is the root and is red. If the tree violates property 4, it is because both z and its parent are red.
+Algorithm to fixup red-black properties maintains 3-part invariant:  
+1. Node z is red  
+2. Root is black  
+3. If the tree violates property 3, it is because z is the root and is red. If the tree violates property 4, it is because both z and its parent are red.  
 
 ```
 FIX(T, z)

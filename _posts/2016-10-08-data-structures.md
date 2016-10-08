@@ -17,6 +17,7 @@ categories:
     - 2/3  
     - Red black trees  
     - Splay trees  
+    - Treaps
 - B trees
 - Skip lists
 

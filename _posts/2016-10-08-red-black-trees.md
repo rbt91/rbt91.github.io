@@ -23,7 +23,7 @@ To see why this is guaranteed, consider properties 4 and 5. The shortest path wi
 
 ## Insertion
 
-New nodes are inserted as if it were an ordinary BST. Then we use __recoloring and rotations__ to make sure that red-black properties are preserved.  
+New nodes are inserted as if it were an ordinary BST. Then we use __recoloring and rotations__ to make sure that red-black properties are preserved. Insertion consists of two phases. The first phase goes down the tree from the root, inserting the new node as a child of an existing node. The second phase goes up the tree, changing colors and performing rotations to maintain the red-black properties.  
 
 By default, we set the color of new node as red. Choosing black node would violate black-height property which id difficult to fix.  
 

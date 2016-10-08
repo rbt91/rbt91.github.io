@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Red Black Trees"
-date:   2013-09-14 19:33:39
+date:   2016-10-08 16:45:39
 categories: 
 ---
 

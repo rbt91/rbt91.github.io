@@ -12,8 +12,7 @@ categories:
 - Self-organizing arrays, lists, or trees
 - Hash tables
 - Binary search trees
- - Random
- - Balanced
+- Balanced BST
     - AVL  
     - 2/3  
     - Red black trees  

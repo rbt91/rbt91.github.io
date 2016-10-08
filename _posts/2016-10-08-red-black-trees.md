@@ -111,7 +111,7 @@ Search for overlapping intervals.
 
 Given two intervals i and j, exactly one of the following three properties holds:  
 1. i is to the left of j -> i ends before j begins -> i.end < j.begin  
-2. i is to the right of j -> i begins after j ends -> i.begin > j.end
+2. i is to the right of j -> i begins after j ends -> i.begin > j.end  
 3. i and j overlap -> i.begin <= j.end && j.begin <= i.end  
 
 We use a red-black tree where each node contains interval _int_ and key is the beginning of interval. Thus in-order traversal of tree lists intervals in sorted order by their beginning.  

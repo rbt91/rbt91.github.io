@@ -55,3 +55,85 @@ set root as black
 
 more complicated than insertion
 
+## Augmenting Red Black Trees
+
+_Augmenting a basic data structure to support additional functionality_
+
+1. Choosing right underlying data structure  
+2. Determine what additional information to maintain  
+3. Ensure that additional information can be maintained for basic modification operations on underlying data structure i.e. recalculating additional information is asymptotically not worse than modifying operation  
+4. Develop new operations on data structure  
+
+In context of red black trees, if the calculation of additional information for node x depends only on x, x.left and x.right, then we can maintain this information during insertion and deletion without asymptotically affecting the O(lg n) performance of these operations.
+
+## Dynamic order statistics tree
+
+Supports two operations:  
+- Retrieve an element with given rank  
+- Determine rank of an element  
+_where rank is the position of element in in-order traversal of the tree, or simply, position in the ordered set_  
+
+We augment red-black tree with additional attribute that contains the number of nodes in the subtree rooted at x, including x
+itself.
+
+![order statistics tree](http://i.imgur.com/XR9nTwe.png)  
+
+`x.size = x.left.size + x.right.size + 1`  
+
+Note the choice of maintaining size attribute - size can be calculated directly from direct child nodes. If we directly stored rank in each node, queries will be simpler, but inserting a new element will require updating rank for O(n) nodes, impacting the running time of insertion operation.
+
+### Retrieve ith element
+
+```
+select(x, i)
+rank = x.left.size + 1
+if (i == rank) return x
+return (i<rank) ? select(x.left, i) : select(x.right, i-rank)
+```
+
+### Determine rank
+
+```
+rank(x)
+rank = x.left.size + 1
+while (x != root)
+  if (x is right child)
+    rank += x.parent.left.size + 1
+  x = x.parent
+return rank
+```
+
+Need to traverse up the tree - suppose x is the node `30` in above image. Rank will be 1+1+12+1=15!  
+
+## Interval trees
+
+Search for overlapping intervals.  
+
+Given two intervals i and j, exactly one of the following three properties holds:  
+1. i is to the left of j -> i ends before j begins -> i.end < j.begin  
+2. i is to the right of j -> i begins after j ends -> i.begin > j.end
+3. i and j overlap -> i.begin <= j.end && j.begin <= i.end  
+
+We use a red-black tree where each node contains interval _int_ and key is the beginning of interval. Thus in-order traversal of tree lists intervals in sorted order by their beginning.  
+For each node, we store 2 values: `min` which is the earliest beginning of any interval in this subtree, and `max` which is the latest end. We can ensure that this information can be calculated from direct child nodes.  
+
+### Seach overlapping interval
+
+```
+search(i)
+x = root
+return x if i overlaps with x
+
+while x != null
+  if x.left != null && x.left.max >= i.beginning               // explanation below
+    x = x.left
+  else
+    x = x.right
+  return x if i overlaps with x
+  
+return null
+```
+
+Given interval does not overlap with current node x. Either i ends before x begins. Or i begins after x ends. First case is trivial, we want to go down the left subtree. In second case, left substree contains all intervals which began before x. But, if left subtree also contains some interval which is ending after given interval begins, we surely have an overlap.  
+
+Also notice that we didn't really need to store min for each subtree.  

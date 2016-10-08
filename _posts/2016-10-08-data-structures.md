@@ -5,7 +5,7 @@ date:   2016-10-08 14:24:39
 categories: 
 ---
 
-# Dictionaries
+## Dictionaries
 
 - Arrays
 - Linked lists
@@ -21,7 +21,7 @@ categories:
 - B trees
 - Skip lists
 
-# Priority queues
+## Priority queues
 
 - Sorted array or list
 - Binary heaps
@@ -31,26 +31,26 @@ categories:
 - Fibonacci heaps
 - Pairing heaps
 
-# Suffix trees and tries
+## Suffix trees and tries
 
-# Graphs
+## Graphs
 
 - adjacency lists
 - matrices
 - edge lists
 
-# Sets
+## Sets
 
 - Bit vectors
 - Arrays, lists or dictionaries like BST
 - Bloom filters
 
-## Disjoint sets or set partitions
+### Disjoint sets or set partitions
 
 - Collection of containers
 - Dictionaries with additional attributes to keep set information
 - Union find data structure (rooted trees where each node points to its parent, Union by rank, Path compression)
 
-# Kd trees
+## Kd trees
 
 

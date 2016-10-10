@@ -34,7 +34,7 @@ Algorithm to fixup red-black properties maintains 3-part invariant:
 2. Root is black  
 3. If the tree violates property 3, it is because z is the root and is red. If the tree violates property 4, it is because both z and its parent are red.  
 
-```
+```java
 FIX(T, z)
 while parent is red
   if uncle is red // Case 1
@@ -84,7 +84,7 @@ Note the choice of maintaining size attribute - size can be calculated directly 
 
 ### Retrieve ith element
 
-```
+```java
 select(x, i)
 rank = x.left.size + 1
 if (i == rank) return x
@@ -93,7 +93,7 @@ return (i<rank) ? select(x.left, i) : select(x.right, i-rank)
 
 ### Determine rank
 
-```
+```java
 rank(x)
 rank = x.left.size + 1
 while (x != root)
@@ -119,7 +119,7 @@ For each node, we store 2 values: `min` which is the earliest beginning of any i
 
 ### Seach overlapping interval
 
-```
+```java
 search(i)
 x = root
 return x if i overlaps with x

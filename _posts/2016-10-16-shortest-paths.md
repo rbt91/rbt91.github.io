@@ -220,7 +220,7 @@ O(n<sup>4</sup>)
 #### Improving the running time by repeated squaring
 
 Given a graph with n=9, instead of computing 
-```
+
 L1 = W  
 L2 = L1+W   
 L3 = L2+W  
@@ -229,14 +229,13 @@ L4 = L3+W
 ..  
 ..  
 L8 = L7+W  
-```
+
 we can simply compute 
-```
+
 L1 = W  
-L2 = L1*L1  
-L4 = L2*L2  
-L8 = L4*L4  
-```
+L2 = L1.L1  
+L4 = L2.L2  
+L8 = L4.L4  
 
 O(n<sup>3</sup> lg n).  Ref. CLRS p689  
 

@@ -14,7 +14,7 @@ Choice of representation also depends on the particular algorithm.
 
 # BFS
 
-Note the use of queue to arrange elements in the order in which we want to traverse them.  
+BFS is a search problem (ref. Norvig's Udacity class) where we incrementally expand the frontier to find the solution. BFS can also be thought of as a shortest-paths algorithm that works on unweighted graphs, that is, graphs in which each edge has equal/unit weight. Note the use of queue to arrange elements in the order in which we want to traverse them.  
 
 ```cpp
 #include <iostream>

@@ -17,7 +17,7 @@ The breadth-first-search algorithm is a shortest-paths algorithm that works on u
 
 # Single source shortest paths
 
-Path**s** because multiple paths are possible.  
+Path"s" because we're looking at multiple paths from given source vertex to every other vertex. Moreover, between two vertices also there may be multiple shortest paths with same weight.  
 
 ## Optimal substructure of shortest path
 
@@ -51,7 +51,7 @@ for every vertex v in G
 root.d = 0
 ```
 
-These algorithms use a technique called **relaxation**. The process of _relaxing_ an edge (u,v) consists of testing whether we can improve the shortest path to v found so far by going through u.  
+These algorithms use a technique called **relaxation**. The process of _relaxing_ an edge (u,v) consists of testing whether we can improve the shortest path to v found so far by going through u. In other words, the estimate for shortest path is gradually replaced by more accurate values, eventually reaching the optimal solution.  
 
 ```
 relax(u, v)
@@ -60,4 +60,42 @@ if v.d > u.d + w(u,v)
   v.p = u
 ```
 
-Algorithms differ in how many times they relax each edge and in which order.
+Algorithms differ in how many times they relax each edge and in which order. They assume adjacency list representation of graph, where we also store weight with each edge to make querying that easier.  
+
+- Bellman Ford: general case where edges can have negative weights. Can detect negative cycles.  
+- Linear time: No cycles.  
+- Dijkstra: faster than Bellman-Ford but no negative edges.  
+
+## Bellman Ford
+
+It's remarkably simple, in that it simply relaxes _all_ the edges and does this |V|-1 times, as we know that shortest path will contain at most that many edges. With each iteration, number of vertices with correct shortest-path weight grows, from which it follows that eventually all vertices will have correctly calculated shortest path weights.  
+
+```
+BellmanFord(G, root)
+
+init(G, root)
+
+// relax every edge v-1 times
+for i=1 to G.V.length-1  // shortest path will contain at least 1 and at most V.length-1 edges
+  for every edge (u,v) in G.E
+    relax(u, v)
+
+// detect negative cycle
+for every edge (u,v) in G.E
+  if v.d > u.d + w(u,v)
+    throw new Exception("Negative cycle exists")
+```
+
+O(VE)  
+
+![Bellman Ford](http://i.imgur.com/OsO22xb.png)  
+
+With every iteration i, we find shortest paths of at most i edges. Since shortest path can contain at most |V|-1 edges, we need |V|-1 iteration. Below example illustrates this for a simple graph:  
+![Passes](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bellman-Ford_worst-case_example.svg/330px-Bellman-Ford_worst-case_example.svg.png)  
+
+Proof of Bellman-Ford's correctness is two-fold:  
+1. if there are no negative cycles, it computes correct shortest-path weights for all vertices reachable from the source.  
+2. it can correctly check for presence of negative cycles.  
+
+
+Reference: [Wikipedia](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)  

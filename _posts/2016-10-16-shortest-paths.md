@@ -90,12 +90,33 @@ O(VE)
 
 ![Bellman Ford](http://i.imgur.com/OsO22xb.png)  
 
-With every iteration i, we find shortest paths of at most i edges. Since shortest path can contain at most |V|-1 edges, we need |V|-1 iteration. Below example illustrates this for a simple graph:  
-![Passes](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bellman-Ford_worst-case_example.svg/330px-Bellman-Ford_worst-case_example.svg.png)  
-
 Proof of Bellman-Ford's correctness is two-fold:  
 1. if there are no negative cycles, it computes correct shortest-path weights for all vertices reachable from the source.  
+
+With every iteration i, we find shortest paths of at most i edges starting from source vertex. Since shortest path can contain at most |V|-1 edges, we need |V|-1 iteration. After |V|-1 iterations, we'd have found shortest paths with at most |V|-1 edges. Below example illustrates this for a simple graph:  
+![Passes](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bellman-Ford_worst-case_example.svg/330px-Bellman-Ford_worst-case_example.svg.png)  
+
 2. it can correctly check for presence of negative cycles.  
 
+If we can still improve the estimate for some vertex even after |V|-1 passes over all edges, it must imply the presence of a negative cycle.  
 
 Reference: [Wikipedia](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)  
+
+## Single source shortest paths in DAG
+
+Shortest paths are always well defined in a dag, since even if there are negative-weight edges, no negative-weight cycles can exist.  
+
+This _linear time_ algorithm starts by topologically sorting the dag to impose a linear ordering on the vertices. If dag contains a path from u to v, then u precedes v in the topological sort. We make just one pass over the vertices in the topologically sorted order. As we process each vertex, we relax each edge that leaves the vertex. O(V+E)  
+
+```
+DAG-Shortest-Paths(G, root)
+init(G, root)
+For every vertex u in topologically sorted ordering of G
+  for all edges (u,v) in G.E
+    relax(u, v)
+```
+
+![DAG shortest paths](http://i.imgur.com/eZgTl07.png)  
+
+## Dijkstra's algorithm
+

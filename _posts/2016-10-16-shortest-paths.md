@@ -68,7 +68,7 @@ Algorithms differ in how many times they relax each edge and in which order. The
 
 ## Bellman Ford
 
-It's remarkably simple, in that it simply relaxes _all_ the edges and does this |V|-1 times, as we know that shortest path will contain at most that many edges. With each iteration, number of vertices with correct shortest-path weight grows, from which it follows that eventually all vertices will have correctly calculated shortest path weights.  
+It's remarkably simple, in that it simply relaxes _all_ the edges and does this `|V|-1` times, as we know that shortest path will contain at most that many edges. With each iteration, number of vertices with correct shortest-path weight grows, from which it follows that eventually all vertices will have correctly calculated shortest path weights.  
 
 ```
 BellmanFord(G, root)
@@ -76,7 +76,7 @@ BellmanFord(G, root)
 init(G, root)
 
 // relax every edge v-1 times
-for i=1 to G.V.length-1  // shortest path will contain at least 1 and at most V.length-1 edges
+for i=1 to G.V.length-1  // shortest path will contain at least 1 and at most |V|-1 edges
   for every edge (u,v) in G.E
     relax(u, v)
 
@@ -94,11 +94,12 @@ Proof of Bellman-Ford's correctness is two-fold:
 1. if there are no negative cycles, it computes correct shortest-path weights for all vertices reachable from the source.  
 
 With every iteration i, we find shortest paths of at most i edges starting from source vertex. Since shortest path can contain at most |V|-1 edges, we need |V|-1 iteration. After |V|-1 iterations, we'd have found shortest paths with at most |V|-1 edges. Below example illustrates this for a simple graph:  
-![Passes](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bellman-Ford_worst-case_example.svg/330px-Bellman-Ford_worst-case_example.svg.png)  
+
+![Passes](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bellman-Ford_worst-case_example.svg/330px-Bellman-Ford_worst-case_example.svg.png)
 
 2. it can correctly check for presence of negative cycles.  
 
-If we can still improve the estimate for some vertex even after |V|-1 passes over all edges, it must imply the presence of a negative cycle.  
+If we can still improve the estimate for some vertex even after `|V|-1` passes over all edges, it must imply the presence of a negative cycle.  
 
 Reference: [Wikipedia](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)  
 

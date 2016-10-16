@@ -16,7 +16,7 @@ Choice of representation also depends on the particular algorithm.
 
 Note the use of queue to arrange elements in the order in which we want to traverse them.  
 
-```C++
+```cpp
 #include <iostream>
 #include <vector>
 #include <list>
@@ -107,7 +107,7 @@ int main()
 
 DFS is used as preliminary step in many graph algorithms to first understand the structure of graph. Note the use of recursion to create depth-first tree representation.  
 
-```C++
+```cpp
 #include <iostream>
 #include <vector>
 #include <list>

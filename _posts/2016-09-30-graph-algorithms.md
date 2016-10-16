@@ -56,11 +56,11 @@ public:
     }
   }
 
-  void BFS(V s)
+  void BFS(V root)
   {
     using F = pair<V, int /*distanceFromRoot*/>;
     queue<F> frontier;
-    frontier.push(make_pair(s, 0));
+    frontier.push(make_pair(root, 0));
 
     set<V> visited;
 

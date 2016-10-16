@@ -26,6 +26,7 @@ Given a shortest path from vertex u to v that goes through vertices i and j, the
 This optimal substructure indicates possible application of dynamic programming and greedy algorithms. Dijkstra's greedy, Floyd-Warshall is DP.  
 
 ## Cycles
+  
 ### Negative cycles
 
 If path from u to v can go through a negative cycle, shortest path is not defined.  
@@ -91,13 +92,14 @@ O(VE)
 ![Bellman Ford](http://i.imgur.com/OsO22xb.png)  
 
 Proof of Bellman-Ford's correctness is two-fold:  
+
 * if there are no negative cycles, it computes correct shortest-path weights for all vertices reachable from the source.  
 
 With every iteration i, we find shortest paths of at most i edges starting from source vertex. Since shortest path can contain at most V-1 edges, we need V-1 iteration. After V-1 iterations, we'd have found shortest paths with at most V-1 edges. Below example illustrates this for a simple graph:  
 
 ![Passes](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bellman-Ford_worst-case_example.svg/330px-Bellman-Ford_worst-case_example.svg.png)
 
-2. it can correctly check for presence of negative cycles.  
+* it can correctly check for presence of negative cycles.  
 
 If we can still improve the estimate for some vertex even after V-1 passes over all edges, it must imply the presence of a negative cycle.  
 

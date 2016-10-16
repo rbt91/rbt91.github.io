@@ -189,12 +189,12 @@ Latter equality holds because first part of equation is actually captured in sec
 ### Computing the shortest path weights bottom up
 
 ---
-**Sidebar**: Matrix multiplication  
+**Sidebar: Matrix multiplication**  
 Suppose we wish to compute the matrix product C = A . B of two n * n matrices A and B. Then, for i,j= 1,2,3,...,n  
 c<sub>ij</sub> = Sum for all k=1 till n (a<sub>ik</sub> . b<sub>kj</sub>  
-
 ![matrix multiplication](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Matrix_multiplication_diagram_2.svg/470px-Matrix_multiplication_diagram_2.svg.png)  
----
+
+---  
 
 Taking graph as input in the form of adjacency matrix W = (w<sub>ij</sub>), we want to compute a series of matrices L<sup>(m)</sup> = (l<sub>ij</sub><sup>(m)</sup>) where m=1,2,3,...,n-1. The final matrix L<sup>(n-1)</sup> contains the final shortest path weights for all pairs of vertices.
 

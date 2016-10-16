@@ -1,5 +1,5 @@
 ---
-layout: post
+layout:
 title:  "Do i know what i want to do?"
 date:   2000-01-01 01:00:00
 tags:   coding

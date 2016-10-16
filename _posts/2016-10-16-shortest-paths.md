@@ -44,11 +44,11 @@ v.d = shortest-path estimate (for path from source to v)
 v.p = predecessor  
 
 ```
-init(G, root)
+init(G, s)
 for every vertex v in G
   v.d = INF
   v.p = NULL
-root.d = 0
+s.d = 0
 ```
 
 These algorithms use a technique called **relaxation**. The process of _relaxing_ an edge (u,v) consists of testing whether we can improve the shortest path to v found so far by going through u. In other words, the estimate for shortest path is gradually replaced by more accurate values, eventually reaching the optimal solution.  
@@ -71,9 +71,9 @@ Algorithms differ in how many times they relax each edge and in which order. The
 It's remarkably simple, in that it simply relaxes _all_ the edges and does this `|V|-1` times, as we know that shortest path will contain at most that many edges. With each iteration, number of vertices with correct shortest-path weight grows, from which it follows that eventually all vertices will have correctly calculated shortest path weights.  
 
 ```
-BellmanFord(G, root)
+BellmanFord(G, s)
 
-init(G, root)
+init(G, s)
 
 // relax every edge v-1 times
 for i=1 to G.V.length-1  // shortest path will contain at least 1 and at most |V|-1 edges
@@ -83,7 +83,7 @@ for i=1 to G.V.length-1  // shortest path will contain at least 1 and at most |V
 // detect negative cycle
 for every edge (u,v) in G.E
   if v.d > u.d + w(u,v)
-    throw new Exception("Negative cycle exists")
+    throw new Exception("Negative cycle detected")
 ```
 
 O(VE)  
@@ -91,15 +91,15 @@ O(VE)
 ![Bellman Ford](http://i.imgur.com/OsO22xb.png)  
 
 Proof of Bellman-Ford's correctness is two-fold:  
-1. if there are no negative cycles, it computes correct shortest-path weights for all vertices reachable from the source.  
+* if there are no negative cycles, it computes correct shortest-path weights for all vertices reachable from the source.  
 
-With every iteration i, we find shortest paths of at most i edges starting from source vertex. Since shortest path can contain at most |V|-1 edges, we need |V|-1 iteration. After |V|-1 iterations, we'd have found shortest paths with at most |V|-1 edges. Below example illustrates this for a simple graph:  
+With every iteration i, we find shortest paths of at most i edges starting from source vertex. Since shortest path can contain at most V-1 edges, we need V-1 iteration. After V-1 iterations, we'd have found shortest paths with at most V-1 edges. Below example illustrates this for a simple graph:  
 
 ![Passes](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bellman-Ford_worst-case_example.svg/330px-Bellman-Ford_worst-case_example.svg.png)
 
 2. it can correctly check for presence of negative cycles.  
 
-If we can still improve the estimate for some vertex even after `|V|-1` passes over all edges, it must imply the presence of a negative cycle.  
+If we can still improve the estimate for some vertex even after V-1 passes over all edges, it must imply the presence of a negative cycle.  
 
 Reference: [Wikipedia](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)  
 
@@ -110,8 +110,8 @@ Shortest paths are always well defined in a dag, since even if there are negativ
 This _linear time_ algorithm starts by topologically sorting the dag to impose a linear ordering on the vertices. If dag contains a path from u to v, then u precedes v in the topological sort. We make just one pass over the vertices in the topologically sorted order. As we process each vertex, we relax each edge that leaves the vertex. O(V+E)  
 
 ```
-DAG-Shortest-Paths(G, root)
-init(G, root)
+DAG-Shortest-Paths(G, s)
+init(G, s)
 For every vertex u in topologically sorted ordering of G
   for all edges (u,v) in G.E
     relax(u, v)
@@ -121,3 +121,27 @@ For every vertex u in topologically sorted ordering of G
 
 ## Dijkstra's algorithm
 
+Greedy algorithm for the case where all weights are non-negative. (Can contain cycles)  
+
+Maintains a set S of vertices whose shortest-path weights have already been determined. Maintains a priority queue Q of vertices ordered by their `d` values. S starts as empty and every step adds the vertex with minimum weight estimate to S.  
+
+```
+Dijkstra(G, s)
+init(G, s)
+
+S = {}
+Q = G.V
+
+while Q is not empty
+  u = Q.extractMin()
+  S.insert(u)
+  
+  for all edges (u,v) in G.E // edges starting from u
+    relax(u, v)
+```
+
+![Dijkstra](http://i.imgur.com/RnKcunX.png)  
+
+Running time depends on implementation of min-priority queue. Using binary heap: O(E lg V)  
+
+Notice resemblence with BFS and Prim's algorithm for finding minimum spanning tree. 

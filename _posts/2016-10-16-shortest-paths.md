@@ -163,19 +163,25 @@ _For the moment, assume there are no negative-weight cycles_
 
 ### Structure of optimal solution
 
-Consider a shortest path p from vertex i to j, and suppose that p contains at most m edges. Split p into p' and p'', such that p' is the path from i to k and p'' is the path from k to j. It can be proven that p' is the shortest path from i to k.
+Given a shortest path from vertex i to j that passes through vertex k, the subpath from i to k is also the shortest path from i to k.  
+
+Shortest path from i to j can be defined as the minimum of shortest paths from i to all predecessors k of j plus w(k, j).
+
+To make sure our sub-problem is of smaller size, take into account the path length. We know that shortest path from i to j can contain at most n-1 edges. A shortest path from i to predecessors k of j will be of length one less, to account for edge from k to j.
 
 ### Recursive solution
 
 Let l<sub>ij</sub><sup>(m)</sup> be the minimum weight of any path from i to j with at most m edges.  
 
-When m=0, i.e. the base case:  
-l<sub>ij</sub><sup>(0)</sup>  =  0 if i == j, INF otherwise  
+When m=1, i.e. the base case:  
+l<sub>ij</sub><sup>(1)</sup>  =  w(i,j)  
+where weight function w is defined as weight of edge i to j if edge exists, INF otherwise  
 
-For m>=1, we can compute l<sub>ij</sub><sup>(m)</sup> as minimum of l<sub>ij</sub><sup>(m-1)</sup> and minimum weight of any path from i to j with at most m edges obtained by looking at all predecessors of j.  
+For m>1, we can compute l<sub>ij</sub><sup>(m)</sup> as minimum of l<sub>ij</sub><sup>(m-1)</sup> and minimum weight of any path from i to j with at most m edges obtained by looking at all predecessors of j.  
 
 ![recursive solution](http://i.imgur.com/2pTA9qm.png)  
 
+<small>We dont really need to find all predecessors of j, instead we can look at all vertices in graph since w(k, j) will be INF if the edge (k,j) does not exist. Weight function w(i,j) is defined as weight of edge i to j if the edge exists, INF otherwise.</small>  
 Latter equality holds because first part of equation is actually captured in second part of equation when k=j and w<sub>jj</sub> is 0.  
 
 ### Computing the shortest path weights bottom up

@@ -145,3 +145,37 @@ while Q is not empty
 Running time depends on implementation of min-priority queue. Using binary heap: O(E lg V)  
 
 Notice resemblence with BFS and Prim's algorithm for finding minimum spanning tree. 
+
+
+
+# All pairs shortest paths
+
+These algorithms use adjacency matrix representation of graph. We also create a predecessor matrix P.  
+
+## Dynamic programming algorithm based on matrix multiplication
+
+Recap of steps for developing a dynamic-programming algorithm:  
+1. Characterize the structure of an optimal solution.  
+2. Recursively define the value of an optimal solution.  
+3. Compute the value of an optimal solution in a bottom-up fashion.  
+
+_For the moment, assume there are no negative-weight cycles_
+
+### Structure of optimal solution
+
+Consider a shortest path p from vertex i to j, and suppose that p contains at most m edges. Split p into p' and p'', such that p' is the path from i to k and p'' is the path from k to j. It can be proven that p' is the shortest path from i to k.
+
+### Recursive solution
+
+Let l<sub>ij</sub><sup>(m)</sup> be the minimum weight of any path from i to j with at most m edges.  
+
+When m=0, i.e. the base case:  
+l<sub>ij</sub><sup>(0)</sup>  =  0 if i == j, INF otherwise  
+
+For m>=1, we can compute l<sub>ij</sub><sup>(m)</sup> as minimum of l<sub>ij</sub><sup>(m-1)</sup> and minimum weight of any path from i to j with at most m edges obtained by looking at all predecessors of j.  
+
+![recursive solution](http://i.imgur.com/2pTA9qm.png)  
+
+Latter equality holds because first part of equation is actually captured in second part of equation when k=j and w<sub>jj</sub> is 0.  
+
+### Computing the shortest path weights bottom up

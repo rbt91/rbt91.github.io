@@ -99,7 +99,7 @@ code {
   margin: 0 2px;
 }
 
-.post pre {
+#post pre {
   border: 1px solid #ddd;
   background-color: #f8f8f8;
   padding: 6px 10px;
@@ -109,23 +109,23 @@ code {
   margin: 30px 0;
 }
 
-.post code {
+#post code {
   border: 1px solid #ddd;
   background-color: #f8f8f8;
   padding: 0 .2em;
 }
 
-.post pre code {
+#post pre code {
   border: none;
 }
 
-.post pre.terminal {
+#post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
 }
 
-.post pre.terminal code {
+#post pre.terminal code {
   background-color: #333;
 }
 
@@ -190,3 +190,7 @@ code {
 .highlight .vg { color: #008080 }
 .highlight .vi { color: #008080 }
 .highlight .il { color: #009999 }
+
+#post2 {
+  display: none;
+}

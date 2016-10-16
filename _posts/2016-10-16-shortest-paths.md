@@ -152,14 +152,14 @@ Notice resemblence with BFS and Prim's algorithm for finding minimum spanning tr
 
 These algorithms use adjacency matrix representation of graph. We also create a predecessor matrix P.  
 
+_For the moment, assume that negative edges may be present but there are no negative cycles_
+
 ## Dynamic programming algorithm based on matrix multiplication
 
 Recap of steps for developing a dynamic-programming algorithm:  
 1. Characterize the structure of an optimal solution.  
 2. Recursively define the value of an optimal solution.  
 3. Compute the value of an optimal solution in a bottom-up fashion.  
-
-_For the moment, assume there are no negative-weight cycles_
 
 ### Structure of optimal solution
 
@@ -199,8 +199,8 @@ Taking graph as input in the form of adjacency matrix W = (w<sub>ij</sub>), we w
 Observe that L<sup>(1)</sup> = W  
 
 ```
-Slow-All-Pairs-Shortest-Paths(W)
-L) = W
+All-Pairs-Shortest-Paths(W)
+L = W
 for m = 2 to n-1
   L = Extend-Shortest-Paths(L, W)
 return L
@@ -211,14 +211,36 @@ for i=[i..n]
   for j=[i..n]
     L'(i,j) = INF
     for k=[1..n]
-      L'(i,j) = MIN{ L'(i,j), L(i,k) + w(k,j) }   // *
+      L'(i,j) = MIN{ L'(i,j), L(i,k) + w(k,j) }   // this is similar to matrix multiplication
 return L'
 ```
 
-\* -> similar to matrix multiplication  
+O(n<sup>4</sup>)  
 
-#### Improving the running time
-Ref. CLRS p689  
+#### Improving the running time by repeated squaring
+
+Given a graph with n=9, instead of computing 
+```
+L1 = W
+L2 = L1+W 
+L3 = L2+W
+L4 = L3+W
+..
+..
+..
+L8 = L7+W
+```
+we can simply compute 
+```
+L1 = W
+L2 = L1*L1
+L4 = L2*L2
+L8 = L4*L4
+```
+
+O(n<sup>3</sup> lg n).  Ref. CLRS p689  
 
 
+## Floyd-Warshall Algorithm
 
+Dynamic programming algorithms with O(n<sup>3</sup>)

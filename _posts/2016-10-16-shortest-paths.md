@@ -179,3 +179,11 @@ For m>=1, we can compute l<sub>ij</sub><sup>(m)</sup> as minimum of l<sub>ij</su
 Latter equality holds because first part of equation is actually captured in second part of equation when k=j and w<sub>jj</sub> is 0.  
 
 ### Computing the shortest path weights bottom up
+
+**Sidebar**: Matrix multiplication  
+Suppose we wish to compute the matrix product C = A . B of two n * n matrices A and B. Then, for i,j= 1,2,3,...,n  
+c<sub>ij</sub> = Sum for all k=1 till n (a<sub>ik</sub> . b<sub>kj</sub>  
+
+![matrix multiplication](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Matrix_multiplication_diagram_2.svg/470px-Matrix_multiplication_diagram_2.svg.png)  
+
+

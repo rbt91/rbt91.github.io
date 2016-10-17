@@ -248,6 +248,12 @@ Another dynamic programming algorithm with O(n<sup>3</sup>) running time that fo
 
 We start by building a shortest path from i to j where all intermediate vertices of this path are in set 1 to k, where k begins at 0 and goes till n.
 
+0. Shortest path from i to j with no intermediate vertices  
+1. Shortest path from i to j with only v<sub>1</sub> as intermediate vertex  
+2. Shortest path from i to j with only v<sub>1</sub>, and v<sub>2</sub> as intermediate vertices  
+3. ...  
+9. Shortest path from i to j with all v<sub>1</sub> to v<sub>n</sub> as intermediate vertices  
+
 Let d<sub>ij</sub><sup>(k)</sup> be a shortest path from i to j where all intermediate vertices are in 1..k
 
 #### base case

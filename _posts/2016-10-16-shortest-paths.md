@@ -244,4 +244,58 @@ O(n<sup>3</sup> lg n).  Ref. CLRS p689
 
 ## Floyd-Warshall Algorithm
 
-Dynamic programming algorithms with O(n<sup>3</sup>)
+Another dynamic programming algorithm with O(n<sup>3</sup>) running time that formulates recursive solution in the terms of intermediate vertices of a shortest path.  
+
+We start by building a shortest path from i to j where all intermediate vertices of this path are in set 1 to k, where k begins at 0 and goes till n.
+
+Let d<sub>ij</sub><sup>(k)</sup> be a shortest path from i to j where all intermediate vertices are in 1..k
+
+#### base case
+
+When k=0, meaning no intermediate vertices, only direct edges, we get d<sub>ij</sub><sup>(0)</sup> = w<sub>ij</sub>  
+
+#### computing next state (bottom up)
+
+Given d<sub>ij</sub><sup>(k-1)</sup>, we can formulate d<sub>ij</sub><sup>(k)</sup> by looking at vertex k as following:  
+* vertex k does not fall on a shortest path from i to j, meaning d<sub>ij</sub><sup>(k)</sup> = d<sub>ij</sub><sup>(k-1)</sup>  
+* vertex k does fall on a shortest path from i to j, meaning path from i to j is the combined path from i to k and k to j, i.e.  d<sub>ij</sub><sup>(k)</sup> = d<sub>ik</sub><sup>(k-1)</sup> + d<sub>kj</sub><sup>(k-1)</sup>
+
+![floyd warshall](http://i.imgur.com/SI0SJBQ.png)
+
+```
+Floyd-Warshall(W)
+D = W
+for k = 1..n
+  for i = 1..n
+    for j = 1..n
+      D(i,j) = MIN{ D(i,j), D(i,k)+D(k,j) }
+return D
+```
+
+### Constructing shortest path
+
+Above algorithm only gives shortest path weights. Additionally, we may also need to construct predecessor matrix.  
+
+Let P<sub>ij</sub><sup>(k)</sup> be the predecessor of vertex j on a shortest path from vertex i with all intermediate vertices in 1..k  
+When k=0, meaning no intemediate vertices, only direct edges  
+P<sub>ij</sub><sup>(0)</sup> = i if edge (i,j) exists, NULL otherwise  
+
+For k>=1,  
+* if k falls on shortest path from i to j, predecessor of j on shortest path from i->j is same as predecessor of j on shortest path from k->j  
+* if k does not fall on shortest path from i to j, predecessor of j is same as predecessor of j on shortest path from i->j with k-1  
+
+```
+Floyd-Warshall-With-Predecessor-Matrix(W)
+D = W
+
+for each edge u,v in graph
+  P(u,v) = v
+
+for k = 1..n
+  for i = 1..n
+    for j = 1..n
+      if D(i,k) + D(k,j) < D(i,j)
+        D(i,j) = D(i,k) + D(k,j)
+        P(i,j) = P(i,k)
+return D,P
+```

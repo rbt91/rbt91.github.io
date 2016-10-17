@@ -305,3 +305,19 @@ for k = 1..n
         P(i,j) = P(i,k)
 return D,P
 ```
+
+## Transitive Closure of a directed graph
+
+![graph](http://i.imgur.com/uicov5B.png)  
+Let W be input graph. W<sub>ij</sub> = 1 if there's an edge from i to j ![adjacency matrix](http://i.imgur.com/vuMJM4X.png)  
+Let T be transitive clousre of graph. T<sub>ij</sub> = 1 if there's a *path* from i to j ![transitive closure](http://i.imgur.com/6NXwGPV.png)
+
+Simplest way to compute transitive clousre is to assign unit weight to all edges and run Floyd-Warshall algorithm in O(n<sup>3</sup>).  
+We can improve a little bit on time and space by substituting bit-wise operations in FW algorithm.  
+
+Let t<sub>ij</sub><sup>(k)</sup> be 1 if there exists a path from i to j with all intermediate vertices in 1..k, 0 otherwise  
+
+When k=0, t<sub>ij</sub><sup>(0)</sup> = 1 if i==j or i,j is an edge  
+
+For k>=1, again, either k is on the path or not:    
+t<sub>ij</sub><sup>(k)</sup> = t<sub>ij</sub><sup>(k-1)</sup> OR (t<sub>ik</sub><sup>(k-1)</sup> AND t<sub>kj</sub><sup>(k-1)</sup>)  

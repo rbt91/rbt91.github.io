@@ -282,7 +282,7 @@ P<sub>ij</sub><sup>(0)</sup> = i if edge (i,j) exists, NULL otherwise
 
 For k>=1,  
 * if k falls on shortest path from i to j, predecessor of j on shortest path from i->j is same as predecessor of j on shortest path from k->j  
-* if k does not fall on shortest path from i to j, predecessor of j is same as predecessor of j on shortest path from i->j with k-1  
+* if k does not fall on shortest path from i to j, predecessor of j is same as predecessor of j on shortest path from i->j with k-1
 
 ```
 Floyd-Warshall-With-Predecessor-Matrix(W)

@@ -43,3 +43,6 @@ repeat:
 Where can this greedy algorithm break? If it terminates with a path that's not the best. Can we find a counter-example? Yes, we can see that greedy algorithm returns suboptimal result if first path picked is s-v-w-t.  
 ![greedy](http://i.imgur.com/v1FaeJf.png)
 
+
+# UNDO
+# Min-cuts

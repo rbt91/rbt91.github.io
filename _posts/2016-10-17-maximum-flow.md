@@ -44,12 +44,37 @@ Where can this greedy algorithm break? If it terminates with a path that's not t
 ![greedy](http://i.imgur.com/v1FaeJf.png)
 
 
-## UNDO
+## Ford Fulkerson algorithm a.k.a. add "undo" support
 
 https://youtu.be/dorq_YA6plQ?t=34m9s
 
-# Min-cuts
+# Correctness of Ford-Fulkerson algorithm
 
+## Cut
+
+A cut is a partition of vertices of a graph into two disjoint sets A, and B with source in one set and target in the other. A cut buckets the edges of graph into 4 categories:  
+
+1. Edges that start in A and end in A  
+2. Edges that start in B and end in B  
+3. Edges that start in A and end in B  
+4. Edges that start in B and end in A  
+
+Capacity or Value of a cut is defined as sum of capacity of all edges going from A to B. Edges going from B to A are exluded from capacity calculation. Different cuts of the same graph can have different capacity. For example, in below graph, {s,w}->{v,t} has capacity 3. While cut {s}->{w,v,t} has capacity 101.  
+
+![cut](http://i.imgur.com/0ydWesA.png)
+
+_A min-cut is a cut with minimum capacity_.
+
+## Max-flow/Min-cut theorem
+
+`Value of maximum flow = Capacity of min-cut`  
+
+If f is a flow in G such that the residual network G<sub>f</sub> has no s-t path, then f is a maximum flow.  
+Given a maximum flow, minimum cut can be computed in linear time using BFS/DFS.
+
+## Edmonds-Karp algorithm
+
+Above algorithm is not optimal as paths are chosen arbitrarily. Edmonds-Karp algorithm improves this by always choosing shortest path first. Shortest path can be found in linear time using BFS.  
 
 ## References
 https://youtu.be/dorq_YA6plQ?t=14m13s  

@@ -49,5 +49,5 @@ Where can this greedy algorithm break? If it terminates with a path that's not t
 
 
 ## References
-https://www.youtube.com/watch?v=dorq_YA6plQ  
+https://youtu.be/dorq_YA6plQ?t=14m13s  
 http://theory.stanford.edu/~tim/w16/l/l1.pdf  

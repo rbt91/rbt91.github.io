@@ -46,6 +46,8 @@ Where can this greedy algorithm break? If it terminates with a path that's not t
 
 ## Ford Fulkerson algorithm a.k.a. add "undo" support
 
+![FFA](https://youtu.be/dorq_YA6plQ?t=34m9s)
+
 https://youtu.be/dorq_YA6plQ?t=34m9s
 
 # Correctness of Ford-Fulkerson algorithm

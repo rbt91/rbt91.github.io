@@ -46,3 +46,8 @@ Where can this greedy algorithm break? If it terminates with a path that's not t
 
 # UNDO
 # Min-cuts
+
+
+## References
+https://www.youtube.com/watch?v=dorq_YA6plQ  
+http://theory.stanford.edu/~tim/w16/l/l1.pdf  

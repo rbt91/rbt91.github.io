@@ -44,7 +44,10 @@ Where can this greedy algorithm break? If it terminates with a path that's not t
 ![greedy](http://i.imgur.com/v1FaeJf.png)
 
 
-# UNDO
+## UNDO
+
+https://youtu.be/dorq_YA6plQ?t=34m9s
+
 # Min-cuts
 
 

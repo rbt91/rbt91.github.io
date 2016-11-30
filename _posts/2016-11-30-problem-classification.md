@@ -45,3 +45,10 @@ return empty state
 
 # Foxes and Hens
 
+<blockquote>**Probability or uncertainty**</blockquote>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-7Tq5-Z1A3g" frameborder="0" allowfullscreen></iframe>
+
+## Utility and Quality
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qXW66HejoLI" frameborder="0" allowfullscreen></iframe>

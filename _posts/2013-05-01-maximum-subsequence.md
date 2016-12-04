@@ -154,3 +154,5 @@ for(i=0; i<n; i++)
 ```
 
 O(n)
+
+<script src="https://gist.github.com/rbt91/d5859654ed4298cfbe171ff00a9e69f0.js"></script>

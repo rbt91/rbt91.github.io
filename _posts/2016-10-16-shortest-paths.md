@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: 
 title:  "Shortest Paths"
 date:   2016-10-16 12:17:39
 categories: 

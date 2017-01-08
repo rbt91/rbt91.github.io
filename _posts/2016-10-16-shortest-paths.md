@@ -5,6 +5,21 @@ date:   2016-10-16 12:17:39
 categories: 
 ---
 
+## Shortest path algorithms at a glance
+
+| Title | Algorithm | Complexity | Useful when |  
+| --- | --- | --- | --- |  
+| BFS | relax all edges in queue order | V+E | Non-weighted graphs |  
+| Bellman Ford | relax all edges, V-1 times | V.E | Directed graph with negative weights; Detects negative cycles |  
+| Topological sort | relax edges in topological ordering of vertices | V+E | DAG with negative weights |  
+| Dijkstra | relax edges in order of current cost estimate (min-priority queue) | E lg V | No negative weights, cycles ok |  
+| A\* | relax edges in order of current + future cost estimate | - | Special case of Dijkstra |  
+| *All Pairs* | | | |  
+| Dyn Prog w/ matrix multiplication | subproblem uses at most k edges, where k=1..n | V<sup>3</sup> lg V | |  
+| Floyd Warshall | subproblem uses only vertices v[1..k], where k=1..n | V<sup>3</sup> | |  
+
+---
+
 Given a weighted, directed graph G, shortest path from u to v is defined as any path p which begins at u and ends at v and has minimum weight, where weight of a path is defined as the sum of weights of its constituent edges. Weights can represent distances, time, cost, or any quantity that accumulates linearly along a path.  
 
 The breadth-first-search algorithm is a shortest-paths algorithm that works on unweighted graphs, that is, graphs in which each edge has unit weight.  

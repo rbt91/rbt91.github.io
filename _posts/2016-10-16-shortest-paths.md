@@ -124,7 +124,9 @@ Reference: [Wikipedia](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algori
 
 Shortest paths are always well defined in a dag, since even if there are negative-weight edges, no negative-weight cycles can exist.  
 
-This _linear time_ algorithm starts by topologically sorting the dag to impose a linear ordering on the vertices. If dag contains a path from u to v, then u precedes v in the topological sort. We make just one pass over the vertices in the topologically sorted order. As we process each vertex, we relax each edge that leaves the vertex. O(V+E)  
+This _linear time_ algorithm starts by topologically sorting the dag to impose a linear ordering on the vertices. If dag contains a path from u to v, then u precedes v in the topological sort. We make just one pass over the vertices in the topologically sorted order. As we process each vertex, we relax each edge that leaves the vertex.  
+
+Topological sorting of DAG can be accomplished by DFS and arranging nodes in decreasing order of their finishing times -> O(V+E)  
 
 ```
 DAG-Shortest-Paths(G, s)

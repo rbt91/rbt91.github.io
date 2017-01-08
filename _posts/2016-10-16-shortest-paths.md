@@ -10,9 +10,9 @@ categories:
 | Title | Algorithm | Complexity | Useful when |  
 | --- | --- | --- | --- |  
 | BFS | relax all edges in queue order | V+E | Non-weighted graphs |  
-| Bellman Ford | relax all edges, V-1 times | V.E | Directed graph with negative weights; Detects negative cycles |  
-| Topological sort | relax edges in topological ordering of vertices | V+E | DAG with negative weights |  
-| Dijkstra | relax edges in order of current cost estimate (min-priority queue) | E lg V | No negative weights, cycles ok |  
+| Bellman Ford | relax all edges, V-1 times | V.E | May contain negative cycles |  
+| Topological sort | relax edges in topological ordering of vertices | V+E | No cycles |  
+| Dijkstra | relax edges in order of current cost estimate (min-priority queue) | E lg V | No negative weights |  
 | A\* | relax edges in order of current + future cost estimate | - | Special case of Dijkstra |  
 | *All Pairs* | | | |  
 | Dyn Prog w/ matrix multiplication | subproblem uses at most k edges, where k=1..n | V<sup>3</sup> lg V | |  

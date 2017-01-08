@@ -221,7 +221,7 @@ int main()
 
 # Connected components
 
-A graph is **strongly connected** if every vertex is reachable from every other vertex.  
+A graph is **strongly connected** if every vertex is reachable from every other vertex. Simple BFS can help in determining whether a graph is strongly connected. If graph is not strongly connected, we can break it into pieces where each piece is strongly connected.    
 
 **Strongly connected components** of an arbitrary graph are the collection of sub-graphs where each sub-graph is strongly connected.  
 
@@ -250,7 +250,12 @@ Step 2: Create G'
 |------------^  
 ```
 
-Step 3: call DFS on G', starting with vertex 4, then 2 followed by 1 and 0 and 3.
+Step 3: call DFS on G', starting with vertex 4, then 2 followed by 1 and 0 and 3. This makes use of property of strongly connected components' graph:  
+```
+{2,1,0} ->{3} <- {4}
+```
+The SCC graph is a **DAG** and hence we want to visit nodes in topological order.  
+
 4: (4)  
 2: (2, 0, 1)  
 1: ()  

@@ -56,6 +56,18 @@ Variant of search problem where an action does not lead to a fixed state, rather
 Utility - what is the value of a particular state  
 Quality - given a state, what's the quality of a particular action  
 
-Both U & Q are usually defined in terms of each other. So it's important to handle base cases (to avoid infinite recursion) and use memoization (to avoid duplicate computation).  
+Given current State  
+
+Q. What's the next optimal action?  
+A. Action with highest quality in this state  
+
+Q. What's the quality of an action in given state  
+A. Average utility of all possible new states  
+
+Q. What's the utility of a state  
+A. Base cases or:  
+   Max quality of all possible actions in this state (recursion)  
+
+Both U & Q are usually defined in terms of each other. So it's important to handle base cases (to avoid infinite recursion) and use memoization (to avoid duplicate computation). 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qXW66HejoLI" frameborder="0" allowfullscreen></iframe>
